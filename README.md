@@ -133,6 +133,19 @@ Prospectorを外すと、右手子機のUSBをPCへつないでも通常の右�
 Prospector構成のファームのビルド・設定確認と実機確認は別です。
 実機では、画面表示、電池駆動、無線再接続、キーとトラックボール、Studio接続の確認が必要です。
 
+### Prospector依存の互換修正とテスト
+
+固定したProspectorモジュールには、Bluetooth切断時に無効な子機番号を通知する処理と、
+画面初期化時にNULLイベントを参照する処理があるため、ドングルのビルド時だけ
+`tools/prepare_prospector.py`で修正済みソースを生成します。westで取得した元ソースは変更しません。
+接続番号はProspector自身の管理情報を使い、画面更新前に番号と表示部品を検査します。
+依存元のハッシュが変わるとビルドを停止するため、モジュール更新時には修正の要否を確認してください。
+
+回帰テストは`python3 tests/test_prospector_safety.py`で実行できます。
+Python 3、Cコンパイラー、固定した依存ソースを取得するネット接続が必要です。
+実際のCハンドラーを使い、ホスト・左右子機の切断／再接続、画面初期化、無効な画面更新を検証します。
+このテストと全ファーム構成のビルドをGitHub Actionsで実行します。
+
 参考：
 
 - [Prospector公式モジュール](https://github.com/carrefinho/prospector-zmk-module)

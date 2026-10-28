@@ -1,0 +1,14 @@
+name: Prospector safety regression tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  handlers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned sources, prepare fixes and test actual C handlers
+        run: python3 tests/test_prospector_safety.py
