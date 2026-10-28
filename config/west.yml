@@ -17,6 +17,8 @@ manifest:
       url-base: https://github.com/kumamuk-git
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: e24-gh
@@ -41,5 +43,9 @@ manifest:
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
+    - name: prospector-zmk-module
+      remote: carrefinho
+      # The main branch at this revision supports ZMK v0.3 / Zephyr 3.5.
+      revision: 77a852293532879c992847e01db27abe4f94fa9f
   self:
     path: config
