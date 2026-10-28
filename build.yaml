@@ -39,3 +39,13 @@ include:
     artifact-name: zen_left_trackpad_peripheral
   - board: bmp_boost
     shield: settings_reset
+  - board: bmp_boost
+    shield: zen_right
+    snippet: "studio-rpc-usb-uart input-trackball-pmw3610 input-split split-peripheral"
+    artifact-name: zen_right_trackball_pmw3610_peripheral
+  - board: seeeduino_xiao_ble
+    shield: zen_dongle prospector_adapter
+    snippet: "studio-rpc-usb-uart input-split-listener-right-trackball-pmw3610"
+    artifact-name: zen_prospector_central
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
