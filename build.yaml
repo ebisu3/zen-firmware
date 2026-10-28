@@ -17,6 +17,11 @@ include:
     artifact-name: zen_left_peripheral
   - board: bmp_boost
     shield: zen_left
+    snippet: "studio-rpc-usb-uart zmk-usb-logging"
+    cmake-args: -DCONFIG_ZMK_BATTERY_REPORT_INTERVAL=5
+    artifact-name: zen_left_peripheral_usb_logging
+  - board: bmp_boost
+    shield: zen_left
     snippet: "studio-rpc-usb-uart input-trackball-pmw3610 input-split-left-trackball-pmw3610"
     artifact-name: zen_left_trackball_pmw3610_peripheral
   - board: bmp_boost

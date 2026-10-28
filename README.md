@@ -25,6 +25,7 @@ GitHub Actionsで作成される `firmware` というzipファイルには、以
 - `zen_right_trackball_paw3222_central.uf2`
 - `zen_right_trackpad_central.uf2`
 - `zen_left_peripheral.uf2`
+- `zen_left_peripheral_usb_logging.uf2`（左手のUSBログ診断用。電池の測定値を5秒ごとに出力）
 - `zen_left_trackball_pmw3610_peripheral.uf2`
 - `zen_left_trackball_paw3222_peripheral.uf2`
 - `zen_left_trackpad_peripheral.uf2`
