@@ -22,6 +22,7 @@ GitHub Actionsで作成される `firmware` というzipファイルには、以
 
 - 設定リセット用UF2ファイル
 - `zen_right_trackball_pmw3610_central.uf2`
+- `zen_right_trackball_pmw3610_central_usb_logging.uf2`（右手のUSBログ診断用。電池の測定値を5秒ごとに出力）
 - `zen_right_trackball_paw3222_central.uf2`
 - `zen_right_trackpad_central.uf2`
 - `zen_left_peripheral.uf2`
