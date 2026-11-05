@@ -1,4 +1,4 @@
-if SHIELD_ZEN_LEFT || SHIELD_ZEN_RIGHT
+if SHIELD_ZEN_LEFT || SHIELD_ZEN_RIGHT || SHIELD_ZEN_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "ZEN"
@@ -6,13 +6,33 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT
     default y
 
-config SPI
-    default y
-
 config INPUT
     default y
 
 config ZMK_MOUSE
     default y
- 
+endif
+
+if SHIELD_ZEN_LEFT || SHIELD_ZEN_RIGHT
+
+config SPI
+    default y
+
+endif
+
+if SHIELD_ZEN_DONGLE
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+# Two keyboard peripherals plus the five existing host profiles.
+config BT_MAX_CONN
+    default 7
+
+config BT_MAX_PAIRED
+    default 7
+
 endif

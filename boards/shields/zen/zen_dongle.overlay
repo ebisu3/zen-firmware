@@ -1,0 +1,21 @@
+#include "zen_layouts.dtsi"
+#include "zen_transform.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &zen_physical_layout;
+    };
+
+    mock_kscan: kscan {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&zen_physical_layout {
+    kscan = <&mock_kscan>;
+    transform = <&zen_transform>;
+};

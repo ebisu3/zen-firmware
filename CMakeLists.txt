@@ -6,3 +6,7 @@ if(CONFIG_SHIELD_ZEN_LEFT OR CONFIG_SHIELD_ZEN_RIGHT)
   zephyr_library_sources_ifdef(CONFIG_PMW3610_ALT drivers/pmw3610_alt/src/pmw3610.c)
   zephyr_library_sources_ifdef(CONFIG_IQS7211E drivers/iqs7211e/src/iqs7211e.c drivers/iqs7211e/src/iqs7211e_reg.c)
 endif()
+
+if(CONFIG_SHIELD_ZEN_DONGLE)
+  include(cmake/prospector_compat.cmake)
+endif()
